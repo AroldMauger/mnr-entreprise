@@ -21,4 +21,10 @@ class HomeController extends AbstractController {
     {
         return $this->render("pages/adminpage.html.twig");
     }
+
+    #[Route('/success', name:"success", methods: ['GET'])]
+    public function success()
+    {
+        return $this->render("pages/success.html.twig");
+    }
 }

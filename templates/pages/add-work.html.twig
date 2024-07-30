@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/70fabb1b7e.js" crossorigin="anonymous"></script>
+    <meta name="description" content="Maiseret menuiserie, bois, pvc, réparations et travaux Calvados">
+    <title>Maiseret menuiserie</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header>
+    <img src="logo.png" class="logo"/>
+    <nav>
+        <ul>
+            <li id="loginHeader"><a id="lienLogin" href="/">HOME</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+
+    <h1>Create new Work</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">Save</button>
+    {{ form_end(form) }}
+
+</main>
+
+</body>
+</html>
+
+

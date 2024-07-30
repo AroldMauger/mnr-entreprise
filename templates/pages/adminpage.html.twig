@@ -10,48 +10,38 @@
     <meta name="description" content="">
     <link rel="stylesheet" href="app.css">
     <script src="https://kit.fontawesome.com/70fabb1b7e.js" crossorigin="anonymous"></script>
-    <script src="landingpage.js" type="module"></script>
 </head>
 <body>
+<div id="headerEdition" >
+    <i class="fa-solid fa-pen-to-square"></i>
+    <p>Mode administrateur</p>
+</div>
 <header>
-    <div id="headerEdition" >
-        <i class="fa-solid fa-pen-to-square"></i>
-        <p>Mode administrateur</p>
-    </div>
-    <div id="headerStatic">
-        <h1>Quentin MAISERET <span>Menuisier professionnel dans le Calvados</span></h1>
-        <nav>
-            <ul>
-                <li>PROJETS</li>
-                <li>CONTACT</li>
-                <li id="loginHeader"><a id="lienLogin" href="/login">LOGIN</a></li>
-                <li id="logout">LOGOUT</li>
-            </ul>
-        </nav>
-    </div>
+
+    <img src="logo.png" class="logo"/>
+    <nav>
+        <ul>
+            <li>
+                <a href="/add-work">AJOUTER DES TRAVAUX</a>
+            </li>
+            <li id="loginHeader">
+                <a id="lienLogin" href="/logout">DÉCONNEXION</a>
+            </li>
+        </ul>
+    </nav>
 </header>
 <main>
     <section id="introduction">
-        <figure id="photoWorks">
-            <img src="image-works.png" alt="">
-            <div class="boutonModifier1">
-                <button class="boutonModifier" style="display: none"><i class="fa-regular fa-pen-to-square"></i> modifier</button>
-            </div>
-        </figure>
+        <img src="image-works.png" alt="" class="image-landing">
         <article>
-            <div class="boutonModifier2">
-                <button class="boutonModifier" style="display: none"><i class="fa-regular fa-pen-to-square"></i> modifier</button>
-            </div>
-            <h2>Designer d'espace</h2>
-            <p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
-            <p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
-            <p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
+            <h2>MEUNUISIER PROFESSIONNEL</h2>
+            <p>MES VALEURS EN TANT QUE MNR ENTREPRISE</p>
         </article>
     </section>
     <section id="portfolio">
         <div class="boutonModifier3">
             <h2>Mes Projets</h2>
-            <a href="#modal_gallery_photo" class="open_modal boutonModifier" style="display: none">
+            <a href="#modal_gallery_photo" class="open_modal boutonModifier">
                 <i class="fa-regular fa-pen-to-square"></i> modifier
             </a>
         </div>
@@ -133,6 +123,5 @@
     </aside>
 </main>
 
-<script src="modal.js" type="module"></script>
 </body>
 </html>
