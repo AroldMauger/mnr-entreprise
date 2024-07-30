@@ -48,6 +48,7 @@ class HomeController extends AbstractController {
                 'image' => $work->getImage(),
                 'date' => $work->getDate()->format('d/m/Y'),
                 'title' => $work->getTitle(),
+                'status' => $work->getStatus()
             ];
         }
 

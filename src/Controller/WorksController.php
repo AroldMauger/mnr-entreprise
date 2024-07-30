@@ -67,7 +67,9 @@ class WorksController extends AbstractController
                 'title' => $work->getTitle(),
                 'image' => $work->getImage(),
                 'date' => $work->getDate()->format('Y-m-d'),
-                'category' => $work->getCategory()
+                'category' => $work->getCategory(),
+                'status' => $work->getStatus()
+
             ];
         }
 

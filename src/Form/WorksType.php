@@ -37,6 +37,15 @@ class WorksType extends AbstractType
             ->add('date', DateType::class, [
                 'widget' => 'single_text',
             ])
+            ->add('status', ChoiceType::class, [
+                'choices'  => [
+                    'Non' => '',
+                    'Avant' => 'Avant',
+                    'Après' => 'Après',
+                ],
+                'label' => 'Ajouter une étiquette',
+                'required' => false,
+            ])
             ->add('image', FileType::class, [
                 'label' => 'Image (JPG, PNG file)',
                 'mapped' => false,

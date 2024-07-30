@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 .then(data => {
                     var worksList = document.getElementById('works-list');
                     worksList.innerHTML = '';
+
                     data.works.forEach(function(work) {
                         var workCard = document.createElement('div');
                         workCard.classList.add('work-card');
@@ -19,15 +20,36 @@ document.addEventListener('DOMContentLoaded', function() {
                         img.src = './uploads/images/' + work.image;
                         workCard.appendChild(img);
 
+                        var titleContainer = document.createElement('div');
+                        titleContainer.classList.add('title-container');
+                        workCard.appendChild(titleContainer);
+
                         var dateSpan = document.createElement('span');
                         dateSpan.classList.add('work-date');
                         dateSpan.textContent = work.date;
-                        workCard.appendChild(dateSpan);
+                        titleContainer.appendChild(dateSpan);
 
                         var titleSpan = document.createElement('span');
                         titleSpan.classList.add('work-title');
                         titleSpan.textContent = work.title;
-                        workCard.appendChild(titleSpan);
+                        titleContainer.appendChild(titleSpan);
+
+                        if (work.status !== "") {
+                            var etiquetteContainer = document.createElement('div');
+                            etiquetteContainer.classList.add('etiquette-container');
+                            if (work.status === 'Avant') {
+                                etiquetteContainer.classList.add('etiquette-avant');
+                            } else if (work.status === 'Après') {
+                                etiquetteContainer.classList.add('etiquette-apres');
+                            }
+
+                            var etiquetteSpan = document.createElement('span');
+                            etiquetteSpan.classList.add('etiquette');
+                            etiquetteSpan.textContent = work.status;
+                            etiquetteContainer.appendChild(etiquetteSpan);
+
+                            workCard.appendChild(etiquetteContainer);
+                        }
 
                         worksList.appendChild(workCard);
                     });
@@ -35,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
 
 
 /*FILTRAGE DES TRAVAUX AU CLIC SUR LA CATEGORIE*/
