@@ -57,11 +57,15 @@ header {
     align-items: center;
     flex-direction: row;
     height: 80px;
-    margin-bottom: 100px;
-    padding: 3em;
+    padding: 2em;
+    background-color: #710808;
 }
 
-
+.ul-nav {
+    display: flex;
+    flex-direction: row;
+    gap:4em;
+}
 h1{
     display: flex;
     flex-direction: column;
@@ -90,6 +94,7 @@ nav ul {
     align-items: center;
     list-style-type: none;
 
+
 }
 nav li {
     padding: 0 10px;
@@ -99,22 +104,8 @@ nav li {
 li:hover {
     color: #B1663C;
 }
-#introduction {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 70px;
-    gap:2rem;
-    padding: 3em;
-}
 
-#introduction img {
-    margin: auto;
-    width: 30%;
-}
-#introduction article {
 
-    width: 30%;
-}
 
 #introduction h2 {
     margin-bottom: 1em;
@@ -222,11 +213,8 @@ footer nav ul {
 
 #lienLogin {
     text-decoration: none;
-    color : black;
 }
-#lienLogin:hover {
-    color: #B1663C;
-}
+
 
 #login {
     margin-top : 112px;
@@ -310,6 +298,7 @@ footer nav ul {
 
 #logout {
     display: none;
+    color:#CF9215;
 }
 
 #logout:hover {
@@ -664,6 +653,16 @@ footer nav ul {
     object-fit: cover;
 }
 
+.link-in-nav {
+    color: #CF9215;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.link-in-nav:hover, #lienLogin:hover{
+text-decoration: underline
+}
+
 /* CARDS */
 
 .work-card {
@@ -675,4 +674,91 @@ footer nav ul {
 
 .filter-category {
     cursor: pointer;
+}
+
+/* Styles pour le carrousel */
+#introduction {
+    position: relative; /* Assure que les boutons du carrousel se positionnent correctement */
+    margin-bottom: 70px; /* Espace entre le carrousel et l'image */
+}
+
+.carousel-container {
+    position: absolute; /* Positionne le carrousel au-dessus de l'image */
+    bottom: 20px; /* Alignement du carrousel en bas de la section, ajustable */
+    left: 50%; /* Centre horizontalement le carrousel */
+    transform: translateX(-50%); /* Compense le décalage dû à left: 50% */
+    width: 100%;
+    max-width: 760px; /* Ajuste la largeur du carrousel */
+    margin: auto;
+    overflow: hidden;
+    background-color: #f9f9f9; /* Optionnel : pour mieux voir le carrousel */
+    border-radius: 10px; /* Optionnel : pour des coins arrondis */
+    z-index: 100; /* Assure que le carrousel est au-dessus de l'image */
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+}
+
+.carousel-slide p {
+    font-size: 1.2em;
+    margin: 0;
+    padding-top: 1em;
+    padding-inline:4em;
+}
+
+.carousel-slide cite {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 26%;
+    width: 40px;
+    height: 40px;
+    background-color: #ddd;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #333;
+    z-index: 101; /* Assure que les boutons sont au-dessus du carrousel */
+}
+
+.carousel-button:hover{
+    background-color: #CF9215;
+
+}
+
+.fa-star {
+    color:#CF9215;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+#introduction img {
+    display: block; /* Assure que l'image est bien affichée */
+    width: 100%;
+    margin: auto;
+}
+
+.stars-container {
+    margin:0px;
 }

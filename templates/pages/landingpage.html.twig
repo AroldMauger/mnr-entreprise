@@ -17,26 +17,69 @@
 <header>
     <img src="logo.png" class="logo"/>
     <nav>
-        <ul>
+        <ul class="ul-nav">
             <li>
-                <a href="#projets">PROJETS</a>
+                <a href="#projets" class="link-in-nav">RÉALISATIONS</a>
             </li>
             <li>
-                <a href="#contact">CONTACT</a>
+                <a href="#contact" class="link-in-nav">CONTACT</a>
             </li>
-            <li id="loginHeader"><a id="lienLogin" href="/login">LOGIN</a></li>
-            <li id="logout">LOGOUT</li>
+            <li id="loginHeader">
+                <a id="lienLogin" href="/login" class="link-in-nav">LOGIN</a>
+            </li>
+            <li id="logout" class="link-in-nav">LOGOUT</li>
         </ul>
     </nav>
 </header>
 <main>
-    <section id="introduction" style="display: none">
-        <img src="image-works.png" alt="" class="image-landing">
-        <article>
-            <h2>MEUNUISIER PROFESSIONNEL</h2>
-            <p>MES VALEURS EN TANT QUE MNR ENTREPRISE</p>
-        </article>
+    <section id="introduction">
+        <!-- Carrousel des commentaires -->
+        <div class="carousel-container">
+            <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="carousel-slides">
+                <div class="carousel-slide">
+                    <span class="stars-container">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <p>"Merci au menuisier Quentin (MNR rénovation) pour son professionnalisme, il a fait un boulot de dingue!!!"</p>
+                    <cite>- Maison Adeli</cite>
+                </div>
+                <div class="carousel-slide">
+                    <span class="stars-container">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <p>"Nous sommes à 100% satisfaits de chacun des travaux de menuiserie qui ont été réalisés dans notre maison : installation d'un plan de travail, pose de fenêtre, traitement et rénovation de plancher. Je ne peux que le recommander !"</p>
+                    <cite>- Arold MAUGER</cite>
+                </div>
+                <div class="carousel-slide">
+                    <span class="stars-container">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <p>5 étoiles pour MNR Rénovation</p>
+
+                    <cite>- Madeline MARIE</cite>
+                </div>
+            </div>
+            <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+
+        <!-- Image en dessous du carrousel -->
+        <img src="car3.png" alt="Image car3" />
     </section>
+
+
     <section id="portfolio">
         <div class="boutonModifier3">
             <h2 id="projets">TRAVAUX RÉALISÉS</h2>
@@ -74,5 +117,7 @@
     </section>
 </main>
 <script src="{{ asset('js/filter.js') }}"></script>
+<script src="{{ asset('js/carousel.js') }}"></script>
+
 </body>
 </html>
