@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/70fabb1b7e.js" crossorigin="anonymous"></script>
+    <meta name="description" content="Maiseret menuiserie, bois, pvc, réparations et travaux Calvados">
+    <title>Maiseret menuiserie</title>
+    <link rel="stylesheet" href="app.css">
+    <script src="login.js" type="module"></script>
+</head>
+<body>
+<header>
+    <div id="headerStaticLogin">
+        <a id="lienPagePrincipale" href="./../pages/landingpage.html.twig">
+            <h1>Quentin MAISERET <span>Menuisier professionnel dans le Calvados</span></h1>
+        </a>
+        <nav>
+            <ul>
+                <li>HOME</li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main>
+    <section id="login">
+        <form name="formLogin" class="ConexionForm" method="post">
+            {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+
+            <h2>Log In</h2>
+            <label for="inputEmail">Email</label>
+            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control input-in-login-form" autocomplete="email" required autofocus>
+            <label for="inputPassword">Password</label>
+            <input type="password" name="password" id="inputPassword" class="form-control input-in-login-form" autocomplete="current-password" required>
+
+            <input type="hidden" name="_csrf_token"
+                   value="{{ csrf_token('authenticate') }}"
+            >
+
+            <button type="submit" class="buttonSeConnecter" id="submit-login"><p>Se Connecter</p></button>
+        </form>
+    </section>
+</main>
+
+</body>
+</html>
