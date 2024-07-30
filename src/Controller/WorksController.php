@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class WorksController extends AbstractController
 {
@@ -53,4 +54,56 @@ class WorksController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    #[Route('/api/works', name: 'api_works', methods: ['GET'])]
+    public function getWorks(EntityManagerInterface $em): JsonResponse
+    {
+        $works = $em->getRepository(Works::class)->findAll();
+        $worksArray = [];
+
+        foreach ($works as $work) {
+            $worksArray[] = [
+                'id' => $work->getId(),
+                'title' => $work->getTitle(),
+                'image' => $work->getImage(),
+                'date' => $work->getDate()->format('Y-m-d'),
+                'category' => $work->getCategory()
+            ];
+        }
+
+        return new JsonResponse($worksArray);
+    }
+
+    #[Route('/api/works/{id}', name: 'api_delete_work', methods: ['DELETE'])]
+    public function deleteWork(int $id, EntityManagerInterface $em): Response
+    {
+        $work = $em->getRepository(Works::class)->find($id);
+
+        if (!$work) {
+            return new JsonResponse(['error' => 'Work not found'], Response::HTTP_NOT_FOUND);
+        }
+
+        $em->remove($work);
+        $em->flush();
+
+        return new JsonResponse(['status' => 'Work deleted'], Response::HTTP_NO_CONTENT);
+    }
+    #[Route('/api/works', name: 'delete_all_works', methods: ['DELETE'])]
+    public function deleteAllWorks(WorksRepository $worksRepository, EntityManagerInterface $entityManager): Response
+    {
+        $works = $worksRepository->findAll();
+
+        foreach ($works as $work) {
+            $entityManager->remove($work);
+        }
+
+        $entityManager->flush();
+
+        return new Response('Galerie supprimée avec succès', Response::HTTP_OK);
+    }
+
+
+
 }
+
+

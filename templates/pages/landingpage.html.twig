@@ -1,3 +1,5 @@
+{# templates/pages/landingpage.html.twig #}
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,18 +15,22 @@
 </head>
 <body>
 <header>
-        <img src="logo.png" class="logo"/>
-        <nav>
-            <ul>
-                <li>PROJETS</li>
-                <li>CONTACT</li>
-                <li id="loginHeader"><a id="lienLogin" href="/login">LOGIN</a></li>
-                <li id="logout">LOGOUT</li>
-            </ul>
-        </nav>
+    <img src="logo.png" class="logo"/>
+    <nav>
+        <ul>
+            <li>
+                <a href="#projets">PROJETS</a>
+            </li>
+            <li>
+                <a href="#contact">CONTACT</a>
+            </li>
+            <li id="loginHeader"><a id="lienLogin" href="/login">LOGIN</a></li>
+            <li id="logout">LOGOUT</li>
+        </ul>
+    </nav>
 </header>
 <main>
-    <section id="introduction">
+    <section id="introduction" style="display: none">
         <img src="image-works.png" alt="" class="image-landing">
         <article>
             <h2>MEUNUISIER PROFESSIONNEL</h2>
@@ -33,88 +39,40 @@
     </section>
     <section id="portfolio">
         <div class="boutonModifier3">
-            <h2>Mes Projets</h2>
+            <h2 id="projets">TRAVAUX RÉALISÉS</h2>
             <a href="#modal_gallery_photo" class="open_modal boutonModifier" style="display: none">
                 <i class="fa-regular fa-pen-to-square"></i> modifier
             </a>
         </div>
         <nav class="allFilters">
             <ul id="filters">
-                <li id="filterTous">Tous</li>
-                <!--CATÉGORIES GÉNÉRÉS EN JS-->
+                <li class="filter-category" data-category="Tous">Tous</li>
+                {% for category in categories %}
+                    <li class="filter-category" data-category="{{ category }}">{{ category }}</li>
+                {% endfor %}
             </ul>
         </nav>
 
-        <div class="gallery">
-            <!--PROJETS GÉNÉRÉS EN JS-->
+        <div class="gallery works-list" id="works-list">
+            {% for work in works %}
+                <div class="work-card">
+                    <img class="work-image" src="./uploads/images/{{ work.image }}"></img>
+                    <span class="work-date">{{ work.date|date('d/m/Y') }}</span>
+                    <span class="work-title">{{ work.title }}</span>
+                </div>
+            {% endfor %}
         </div>
 
     </section>
     <section id="contact">
-        <h2>Contact</h2>
+        <h2 id="contact">Contact</h2>
         <p>Vous avez un projet ? Discutons-en !</p>
-        <form action="#" method="post">
-            <label for="name">Nom</label>
-            <input type="text" name="name" id="name">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email">
-            <label for="message">Message</label>
-            <textarea name="message" id="message" cols="30" rows="10"></textarea>
-            <input type="submit" value="Envoyer">
-        </form>
-    </section>
-    <!--MODALE 1-->
-    <aside id="modal_gallery_photo" class="modal" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="titleModal" style="display: none">
-        <div class="modal1_wrapper js-modal-stop" >
-            <nav id="nav_modal1">
-                <i class="fa-solid fa-xmark closebutton_modal"></i>
-            </nav>
-            <div class="modal_wrapper">
-                <h3 id="titleModal">Galerie photo</h3>
-                <div class="miniatures_projets">
-                    <!--Projets générés en JS dans modal.js-->
-                </div>
-                <a href="#modal_ajout_photo" id="button_ajouter_photo" class="button_modal open-modal2">Ajouter une photo</a>
-                <a id="button_supprimer_galerie">Supprimer la galerie</a>
-            </div>
-        </div>
-    </aside>
-    <!--MODALE 2-->
-    <aside id="modal_ajout_photo" class="modal" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="titleModal" style="display: none">
-        <div class="modal2_wrapper js-modal-stop">
-            <nav id="nav_modal2">
-                <i class="fa-solid fa-arrow-left-long button_return"></i>
-                <i class="fa-solid fa-xmark closebutton_modal"></i>
-            </nav>
-            <form class="modal_wrapper_up" id="formModal2">
-                <h3 id="titleModal">Ajout photo</h3>
-                <div class="zone_photo_vide avant">
-                    <i class="fa-solid fa-image"></i>
-                    <label for="charger_image" class="upload_image">+ Ajouter photo</label>
-                    <input id="charger_image"  type="file" accept="image/*" style="display: none" required>
-                    <p>jpg, png : 4mo max</p>
-                </div>
-                <div class="apres" style="display: none;">
-                    <!--Affichage de l'aperçu de l'image en JAVASCRIPT-->
-                </div>
-            </form>
-            <div class="selecteurs_modal2">
-                <label for="title">Titre</label>
-                <input type="text" name="title" id="title" required>
-                <label for="category">Catégorie</label>
-                <select name="category" id="category" required>
-                    <option value=""></option>
-                    <option value="Objets">Objets</option>
-                    <option value="Appartements">Appartements</option>
-                    <option value="Hôtels & restaurants">Hôtels & restaurants</option>
-                </select>
-            </div>
-            <form class="button_valider">
-                <input type="submit" class="button_modal" value="Valider" id="valider">
-            </form>
-        </div>
-    </aside>
-</main>
 
+
+        <a href="mailto:aroldmauger2022@gmail.com?subject=Demande%20de%20devis&body=Bonjour,%0A%0AVeuillez%20trouver%20ci-dessous%20les%20détails%20de%20ma%20demande%20de%20devis%20:%0A%0ANom%20:%20%0AEmail%20:%20%0AMessage%20:%20%0A%0ABien%20cordialement,">Demander un devis par email</a>
+
+    </section>
+</main>
+<script src="{{ asset('js/filter.js') }}"></script>
 </body>
 </html>
