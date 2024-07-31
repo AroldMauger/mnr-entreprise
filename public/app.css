@@ -21,6 +21,8 @@ time, mark, audio, video {
     border: 0;
     font: inherit;
     vertical-align: baseline;
+    font-family: "Work", sans-serif;
+
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -132,35 +134,36 @@ li:hover {
 }
 
 #contact {
-    width: 50%;
-    margin: auto;
-}
-#contact > * {
-    text-align: center;
-
-}
-#contact h2{
-    margin-bottom: 20px;
-}
-#contact form {
-    text-align: left;
-    margin-top:30px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 100px;
+    margin-top: 40px;
+}
+#contact p, #contact a  {
+    text-align: center;
+    font-size: 24px;
+    padding-block: 14px;
+}
+#contact h2{
+    margin-bottom: 10px;
+    color:#CF9215;
+    font-size: 30px;
 }
 
-#contact input {
-    height: 50px;
-    font-size: 1.2em;
-    border: none;
-    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+#contact a {
+    color:#710808;
 }
-#contact label {
-    margin: 2em 0 1em 0;
+#contact a:hover {
+    color:#CF9215;
+    cursor: pointer;
 }
-#contact textarea {
-    border: none;
-    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+.phone {
+    font-weight: 500;
+    font-size: 30px;
+    padding-block: 4px;
 }
 
 input[type="submit"]{
@@ -174,11 +177,6 @@ input[type="submit"]{
     border-radius: 60px ;
 }
 
-footer nav ul {
-    display: flex;
-    justify-content: flex-end;
-    margin: 2em
-}
 
 /* FILTRES*/
 
@@ -186,7 +184,6 @@ footer nav ul {
     display: flex;
     justify-content: center;
     gap : 10px;
-    margin-bottom: 51px;
 }
 .categorieAPI, #filterTous{
     border: 1px solid #1D6154;
@@ -205,84 +202,6 @@ footer nav ul {
 #filterTous:hover {
     color:white;
     background-color:#1D6154 ;
-}
-
-/* CSS du fichier login.html*/
-
-
-
-#lienLogin {
-    text-decoration: none;
-}
-
-
-#login {
-    margin-top : 112px;
-}
-.ConexionForm {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 380px;
-    margin: auto;
-    text-align: left;
-    gap:1rem;
-}
-
-
-.ConexionForm h2 {
-    text-align: center;
-}
-
-.ConexionForm p {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    color: #3D3D3D;
-}
-
-.ConexionForm a {
-    font-weight: 500;
-    font-size: 14px;
-    text-decoration-line: underline;
-    color: black;
-    margin-bottom: 379px;
-    align-self: center;
-}
-
-#email{
-    margin-bottom: 30px;
-}
-
-#password,
-.ConexionForm h2 {
-    margin-bottom: 37px;
-}
-
-.buttonSeConnecter {
-    margin-bottom: 28px;
-    background-color:#1D6154 ;
-    align-self: center;
-    border-radius: 60px;
-    padding : 10px 39px 10px 39px;
-}
-
-.buttonSeConnecter:hover {
-    cursor: pointer;
-}
-
-.buttonSeConnecter p {
-    color: #FFFFFF;
-    font-weight: 700;
-    font-size: 14px;
-}
-
-#password,
-#email {
-    background: #FFFFFF;
-    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-    border: none;
-    height: 50px;
 }
 
 /* HEADER EN MODE EDITION */
@@ -823,4 +742,93 @@ text-decoration: underline
 
 #projets {
     color:#CF9215;
+}
+
+footer {
+    background-color: black;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 50px;
+}
+
+.footer-container, .login-btn {
+    color:white;
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    gap:40px;
+}
+
+/* LOGIN  */
+.btn-back {
+    color:#CF9215;
+    font-size: 20px;
+}
+
+#lienLogin {
+    text-decoration: none;
+}
+
+
+#login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top : 112px;
+
+}
+.ConexionForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    min-height: 300px;
+    text-align: left;
+    gap:1rem;
+    padding: 1em;
+    border-radius: 50px;
+    box-shadow: 5px 5px 5px 5px #CF9215, 10px 10px #CF9215;
+    font-family: "Work", sans-serif;
+}
+
+.ConexionForm label {
+    font-size: 18px;
+    color:#CF9215;
+    font-weight: 800;
+}
+
+.ConexionForm h2 {
+    text-align: center;
+    margin-bottom: 37px;
+    color:#CF9215;
+}
+
+.buttonSeConnecter {
+    margin-top: 28px;
+    background-color:#CF9215 ;
+    border: none;
+    align-self: center;
+    border-radius: 60px;
+    padding : 10px 39px 10px 39px;
+    color:white;
+    font-size: 14px;
+}
+
+.buttonSeConnecter:hover {
+    cursor: pointer;
+    background-color: #710808;
+}
+
+
+#inputEmail,
+#inputPassword {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+    border: none;
+    height: 40px;
+    border-radius: 50px;
+    padding-inline: 10px;
 }

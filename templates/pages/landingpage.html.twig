@@ -16,6 +16,7 @@
 <body>
 <header>
     <img src="logo.png" class="logo"/>
+
     <nav>
         <ul class="ul-nav">
             <li>
@@ -23,9 +24,6 @@
             </li>
             <li>
                 <a href="#contact" class="link-in-nav">CONTACT</a>
-            </li>
-            <li id="loginHeader">
-                <a id="lienLogin" href="/login" class="link-in-nav">LOGIN</a>
             </li>
             <li id="logout" class="link-in-nav">LOGOUT</li>
         </ul>
@@ -113,14 +111,22 @@
 
     </section>
     <section id="contact">
-        <h2 id="contact">Contact</h2>
-        <p>Vous avez un projet ? Discutons-en !</p>
-
+        <h2 id="contact">CONTACT</h2>
+        <p>Un projet pour des travaux? Discutons-en !</p>
+        <span class="phone">Tel. 06 04 51 66 18</span>
 
         <a href="mailto:aroldmauger2022@gmail.com?subject=Demande%20de%20devis&body=Bonjour,%0A%0AVeuillez%20trouver%20ci-dessous%20les%20détails%20de%20ma%20demande%20de%20devis%20:%0A%0ANom%20:%20%0AEmail%20:%20%0AMessage%20:%20%0A%0ABien%20cordialement,">Demander un devis par email</a>
 
     </section>
 </main>
+<footer>
+    <div class="footer-container">
+        <p>SIRET : 92060200000019</p>
+        <p>M.N.R Rénovation : travaux de menuiserie bois et pvc</p>
+        <p>Dozulé, Calvados (14)</p>
+    </div>
+    <a id="lienLogin" href="/login" class="login-btn">Login</a>
+</footer>
 <script src="{{ asset('js/filter.js') }}"></script>
 <script src="{{ asset('js/carousel.js') }}"></script>
 
