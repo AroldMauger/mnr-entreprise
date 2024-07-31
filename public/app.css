@@ -227,20 +227,16 @@ input[type="submit"]{
 .boutonModifier {
     border: 0;
     background-color: #FFFEF8;
-    font-size: 14px;
+    font-size: 18px;
     font-family: 'Work';
     font-weight: 100;
     padding: 0;
 }
 
-.boutonModifier1 {
-    width: 80%;
-    margin-top: 10px;
+.boutonModifier:hover {
+    color:#CF9215;
 }
 
-.boutonModifier2 {
-    margin-bottom: 20px;
-}
 
 .boutonModifier3{
     display: flex;
@@ -292,11 +288,7 @@ input[type="submit"]{
 .allFilters {
     justify-content: center;
 }
-/*LES 3 BOUTONS MODIFIER */
-.boutonModifier {
-    font-family: 'Work Sans';
-    font-size: 14px;
-}
+
 
 #photoSophieBluel {
     display: flex;
@@ -366,8 +358,6 @@ input[type="submit"]{
 .miniatures_projets {
     height: 432px;
     width: 420px;
-    border-bottom: solid 1px;
-    margin-bottom: 38px;
     display: grid;
     grid-template-columns: 78px 78px 78px 78px 78px;
     grid-template-rows: 120px 120px 120px;
@@ -417,6 +407,11 @@ input[type="submit"]{
     color:white;
     font-size: 9px;
 }
+
+.icone_corbeille:hover {
+    cursor: pointer;
+}
+
 .paragraphe_editer {
     position : relative;
     font-size: 12px;
@@ -447,8 +442,22 @@ input[type="submit"]{
     color:red;
     font-size: 14px;
     font-family: 'Syne';
-    margin-top: 23px;
+    margin-top: 40px;
     cursor : pointer;
+    background-color: white;
+    border: none;
+}
+
+#button_supprimer_galerie:hover {
+    color:black;
+}
+
+#button_ajouter_photo:hover {
+    background-color: #1D6154;
+}
+
+#button_ajouter_photo {
+    background-color: #710808;
 }
 
 .div_icone_agrandir {
@@ -495,7 +504,15 @@ input[type="submit"]{
 .closebutton_modal {
     margin-top:32px;
     margin-right: 36px;
+    color:white;
+    background-color: grey;
+    padding: 6px;
+    border-radius: 50%;
+}
+
+.closebutton_modal:hover{
     cursor : pointer;
+    background-color: #710808;
 }
 
 .modal_wrapper_up{
@@ -831,4 +848,62 @@ footer {
     height: 40px;
     border-radius: 50px;
     padding-inline: 10px;
+}
+
+
+/* ADD WORK  */
+
+.main-add-work {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+#works {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    gap:1em;
+}
+
+#works div {
+    display: flex;
+    flex-direction: column;
+    gap:1em;
+}
+
+#works div input{
+    height: 30px;
+}
+
+#works div input:hover{
+    cursor: pointer;
+}
+#works div select{
+    height: 30px;
+}
+
+#works div select:hover{
+    cursor: pointer;
+}
+.btn-submit-form {
+    margin-top: 28px;
+    background-color:#CF9215 ;
+    border: none;
+    align-self: center;
+    border-radius: 60px;
+    padding : 10px 39px 10px 39px;
+    color:white;
+    font-size: 14px;
+}
+.btn-submit-form:hover {
+    background-color: #710808;
+    cursor: pointer;
+}
+.btn-submit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

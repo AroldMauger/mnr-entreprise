@@ -131,15 +131,11 @@ document.addEventListener('DOMContentLoaded', function() {
             let iconeCorbeille = document.createElement("i");
             iconeCorbeille.className = "fa-regular fa-trash-can icone_corbeille";
 
-            let titreProjet = document.createElement("figcaption");
-            titreProjet.textContent = "éditer";
-            titreProjet.className = "paragraphe_editer";
 
             miniaturesProjet.appendChild(figureProjet);
             figureProjet.appendChild(imageProjet);
             figureProjet.appendChild(divIconeCorbeille);
             divIconeCorbeille.appendChild(iconeCorbeille);
-            figureProjet.appendChild(titreProjet);
 
 
         });

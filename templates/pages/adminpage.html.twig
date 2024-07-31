@@ -13,7 +13,6 @@
 </head>
 <body>
 <div id="headerEdition" >
-    <i class="fa-solid fa-pen-to-square"></i>
     <p>Mode administrateur</p>
 </div>
 <header>
@@ -22,7 +21,7 @@
     <nav>
         <ul>
             <li id="loginHeader">
-                <a id="lienLogin" href="/logout">DÉCONNEXION</a>
+                <a id="lienLogin" href="/logout" class="link-in-nav">DÉCONNEXION</a>
             </li>
         </ul>
     </nav>
@@ -37,7 +36,7 @@
     </section>
     <section id="portfolio">
         <div class="boutonModifier3">
-            <h2>TRAVAUX RÉALISÉS</h2>
+            <h2 id="projets">TRAVAUX RÉALISÉS</h2>
             <a href="#modal_gallery_photo" class="open_modal boutonModifier">
                 <i class="fa-regular fa-pen-to-square"></i> Gérer les travaux
             </a>
@@ -55,8 +54,16 @@
             {% for work in works %}
                 <div class="work-card">
                     <img class="work-image" src="./uploads/images/{{ work.image }}"></img>
-                    <span class="work-date">{{ work.date|date('d/m/Y') }}</span>
-                    <span class="work-title">{{ work.title }}</span>
+                    <div class="title-container">
+                        <span class="work-date">{{ work.date|date('d/m/Y') }}</span>
+                        <span class="work-title">{{ work.title }}</span>
+                    </div>
+                    {% if work.status is not empty %}
+                        <div class="etiquette-container {% if work.status == 'Avant' %}etiquette-avant{% elseif work.status == 'Après' %}etiquette-apres{% endif %}">
+                            <span class="etiquette">{{ work.status }}</span>
+                        </div>
+                    {% endif %}
+
                 </div>
             {% endfor %}
         </div>

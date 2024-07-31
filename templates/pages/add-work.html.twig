@@ -16,17 +16,20 @@
     <img src="logo.png" class="logo"/>
     <nav>
         <ul>
-            <li id="loginHeader"><a id="lienLogin" href="/admin">HOME</a></li>
+            <li id="loginHeader"><a id="lienLogin" href="/admin" class="link-in-nav">RETOUR</a></li>
         </ul>
     </nav>
 </header>
-<main>
+<main class="main-add-work">
 
-    <h1>Create new Work</h1>
+    <h2 id="projets">Ajout travaux dans la galerie</h2>
 
     {{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class="btn">Save</button>
+    <div class="btn-submit-container">
+        <button class="btn-submit-form">Ajouter</button>
+
+    </div>
     {{ form_end(form) }}
 
 </main>
