@@ -125,6 +125,7 @@ body {
     margin-top: 1rem;
     padding-inline:100px;
 }
+
 .form-container {
     display: flex;
     flex-direction: column;
