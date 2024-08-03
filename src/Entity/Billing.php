@@ -37,7 +37,7 @@ class Billing
     /**
      * @var Collection<int, BillingItem>
      */
-    #[ORM\OneToMany(targetEntity: BillingItem::class, mappedBy: 'billing')]
+    #[ORM\OneToMany(mappedBy: 'billing', targetEntity: BillingItem::class, cascade: ['persist', 'remove'], orphanRemoval: true)]
     private Collection $billingItems;
 
     public function __construct()

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Maiseret menuiserie</title>
+    <meta name="description" content="Maiseret menuiserie, bois, pvc, réparations et travaux Calvados">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="{{ asset('billing.css') }}">
+    <script src="https://kit.fontawesome.com/70fabb1b7e.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('[data-prototype]');
+            const addButton = document.createElement('button');
+            addButton.type = 'button';
+            addButton.textContent = 'Ajouter un item';
+            addButton.classList.add('btn-add-item');
+            container.appendChild(addButton);
+
+            let index = container.querySelectorAll('.form-group').length;
+
+            addButton.addEventListener('click', function() {
+                const prototype = container.dataset.prototype;
+                const newItem = prototype.replace(/__name__/g, index);
+                const div = document.createElement('div');
+                div.innerHTML = newItem;
+                div.classList.add('new-item');
+                const deleteButton = document.createElement('button');
+                deleteButton.type = 'button';
+                deleteButton.textContent = 'Supprimer';
+                deleteButton.classList.add('btn-delete-item');
+                div.appendChild(deleteButton);
+                container.insertBefore(div, addButton);
+                deleteButton.addEventListener('click', function() {
+                    div.remove();
+                });
+                index++;
+            });
+
+            container.querySelectorAll('.form-group').forEach(function(group) {
+                const deleteButton = document.createElement('button');
+                deleteButton.type = 'button';
+                deleteButton.textContent = 'Supprimer';
+                deleteButton.classList.add('btn-delete-item');
+                group.appendChild(deleteButton);
+                deleteButton.addEventListener('click', function() {
+                    group.remove();
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<header class="header-form">
+    <img class="logo-form" src="{{ asset('logo.png') }}" alt="logo du garage">
+    <a href="/admin" class="return-button-form">RETOUR</a>
+</header>
+
+{{ form_start(form) }}
+<main class="main-form">
+    <h2 class="form_title">DEVIS / FACTURE</h2>
+
+    <div class="form-container">
+        <div class="form-subcontainer">
+
+            <div class="form-group">
+                <label for="form-status" class="form-label">Status</label>
+                <span class="btn-in-billing-form"> {{ form_widget(form.status) }}</span>
+            </div>
+            <div class="form-group">
+                <label for="form-name" class="form-label">Nom du client</label>
+                {{ form_widget(form.name) }}
+            </div>
+            <div class="form-group">
+                <label for="form-address" class="form-label">Adresse</label>
+                {{ form_widget(form.address) }}
+            </div>
+            <div class="form-group">
+                <label for="form-creationDate" class="form-label">Facture créée le</label>
+                {{ form_widget(form.creationDate) }}
+            </div>
+            <div class="form-group">
+                <label for="form-title" class="form-label">Titre de facture</label>
+                {{ form_widget(form.title) }}
+            </div>
+            <div class="form-group">
+                <label for="form-tva" class="form-label">TVA</label>
+                {{ form_widget(form.tva) }}
+            </div>
+        </div>
+
+        <div class="items-container" data-prototype="{{ form_widget(form.billingItems.vars.prototype)|e('html_attr') }}">
+            <h3>Items à ajouter</h3>
+            {% for billingItem in form.billingItems %}
+                <div class="form-group">
+                    <label for="{{ billingItem.quantity.vars.id }}" class="form-label">Quantité</label>
+                    <span class="field-for-items">{{ form_widget(billingItem.quantity) }}</span>
+                </div>
+                <div class="form-group">
+                    <label for="{{ billingItem.name.vars.id }}" class="form-label">Nom</label>
+                    <span class="field-for-items">{{ form_widget(billingItem.name) }}</span>
+                </div>
+                <div class="form-group">
+                    <label for="{{ billingItem.price.vars.id }}" class="form-label">Prix</label>
+                    <span class="field-for-items">{{ form_widget(billingItem.price) }}</span>
+                </div>
+            {% endfor %}
+        </div>
+
+
+    </div>
+</main>
+<div class="btn-form-container">
+    <button type="submit" class="btn-submit">Soumettre</button>
+</div>
+
+{{ form_end(form) }}
+
+</body>
+</html>

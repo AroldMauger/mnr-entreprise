@@ -1,0 +1,295 @@
+/* styles.css */
+body {
+    font-family: "Work", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* billing_form */
+
+.selector_in_billing {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FF6000;
+    margin-bottom: 1.4rem;
+    text-align: center;
+    border: none;
+    background-color: #f0f0f0;
+    margin-left:10px;
+}
+
+
+
+.form-subcontainer {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    width: 50%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    gap:20px;
+    justify-content: space-between;
+}
+
+.form-group input {
+    height: 30px;
+}
+
+.items-container {
+    width: 50%;
+}
+
+.btn-submit {
+    border: none;
+    background: black;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 0.8rem;
+}
+
+.btn-submit:hover {
+    background-color: #FF4500;
+}
+
+.btn-form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-in-billing-form select{
+    padding:5px;
+    height: 30px;
+    width: 100px;
+}
+
+.btn-add-item, .btn-delete-item {
+    padding:5px;
+    height: 30px;
+    width: 140px;
+    margin-top: 10px;
+}
+
+.btn-add-item {
+    margin-bottom: 20px;
+}
+
+.btn-delete-item {
+    background-color: #ff0404;
+    color:white;
+    border: 1px solid black;
+}
+
+.btn-delete-item:hover {
+    background-color: darkred;
+}
+
+.new-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.new-item div{
+    display: flex;
+    gap:8px;
+}
+
+.header-form {
+    display: flex;
+    height: 10%;
+    padding: 5px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #710808;
+    color: #CF9215;
+}
+
+.logo-form {
+    width: 10%;
+}
+.main-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    padding-inline:100px;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+}
+
+.return-button-form {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 1rem 1rem;
+    border-radius: 0.8rem;
+    transition: background-color 0.3s ease;
+}
+
+
+.return-button-form:hover{
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+
+
+.page {
+    width: 210mm; /* Largeur A4 */
+    height: 297mm; /* Hauteur A4 */
+    padding: 20mm; /* Marges de 20mm tout autour */
+    box-sizing: border-box; /* Inclure les bordures et le remplissage dans les dimensions */
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+
+.billing-logo {
+    position: absolute;
+    right: 0;
+    width: 30%;
+}
+
+.garage-data {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:8px;
+    width: 40%;
+    text-align: start;
+}
+
+.text-billing {
+    margin:0px;
+}
+
+
+
+.client-details-container {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+
+}
+
+.client-details {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    width: 40%;
+    text-align: end;
+    gap:8px;
+}
+
+.car-table {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+.car-table-body {
+    display: flex;
+    flex-direction: row;
+    gap : 100px;
+}
+
+.car-column {
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    font-size: 18px;
+    padding: 12px;
+}
+
+.car-table-title {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    border-bottom: 1px solid black;
+    text-align: center;
+    background-color: #ded9d9;
+}
+
+.details {
+    margin-bottom: 20px;
+}
+
+.items-table-header {
+    background-color: #ded9d9;
+    table-layout: fixed;
+}
+
+.items-table-header th {
+    width: 25%;
+}
+
+.items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.items-table th, .items-table td {
+    border: 1px solid #000;
+    padding: 8px;
+}
+
+.total-table {
+    width: 40%;
+    border-collapse: collapse;
+    font-size: 16px;
+    margin-left: auto;
+    margin-bottom: 20px;
+}
+
+.total-table td {
+    padding: 8px;
+    border: 1px solid black;
+}
+
+.result-title {
+    width: 50%;
+}
+
+.result-billing {
+    text-align: right;
+}
+
+.net-to-pay {
+    background-color: #ddd;
+    font-weight: bold;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    gap : 20px;
+}
