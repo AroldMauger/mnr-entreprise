@@ -1,5 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
+
+    // DELETE ALL
     const buttonSupprimerGalerie = document.getElementById('button_supprimer_galerie');
 
     buttonSupprimerGalerie.addEventListener('click', function(event) {
@@ -32,3 +34,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+

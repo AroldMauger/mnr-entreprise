@@ -596,7 +596,8 @@ input[type="submit"]{
 }
 
 .link-in-nav:hover, #lienLogin:hover{
-text-decoration: underline
+    text-decoration: underline;
+    cursor:pointer;
 }
 
 /* CARDS */
