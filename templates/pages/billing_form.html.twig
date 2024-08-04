@@ -74,11 +74,19 @@
                 {{ form_widget(form.name) }}
             </div>
             <div class="form-group">
-                <label for="form-address" class="form-label">Adresse</label>
+                <label for="form-address" class="form-label">Adresse (rue, avenue, etc)</label>
                 {{ form_widget(form.address) }}
             </div>
             <div class="form-group">
-                <label for="form-creationDate" class="form-label">Facture créée le</label>
+                <label for="form-address" class="form-label">Code Postal</label>
+                {{ form_widget(form.code_postal) }}
+            </div>
+            <div class="form-group">
+                <label for="form-address" class="form-label">Ville</label>
+                {{ form_widget(form.city) }}
+            </div>
+            <div class="form-group">
+                <label for="form-creationDate" class="form-label">Date d'émission</label>
                 {{ form_widget(form.creationDate) }}
             </div>
             <div class="form-group">

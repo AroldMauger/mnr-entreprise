@@ -294,3 +294,55 @@ footer {
     font-size: 12px;
     gap : 20px;
 }
+
+.form_title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #CF9215;
+    margin-bottom: 1.4rem;
+    text-align: center;
+}
+
+.return-billing {
+    text-decoration: none;
+    color: white;
+    background-color: #710808;
+    font-weight: 700;
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+    border-radius: 0.8rem;
+    transition: background-color 0.3s ease;
+}
+
+.billing-dwl {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    font-weight: 700;
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+    border-radius: 0.8rem;
+    transition: background-color 0.3s ease;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.billing-dwl:hover {
+    background-color: #CF9215;
+}
+.return-billing:hover{
+    background-color: grey;
+}
+
+.main-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    padding-inline:100px;
+}
+
+.submit-form-button_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}

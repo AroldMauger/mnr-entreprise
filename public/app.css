@@ -121,7 +121,6 @@ li:hover {
 }
 .gallery {
     padding:2em;
-    width: 95%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 10px;
@@ -624,7 +623,6 @@ input[type="submit"]{
 
 .etiquette-container {
     position: absolute;
-    top:0;
     display: flex;
     color:white;
     padding:1em;
@@ -635,11 +633,13 @@ input[type="submit"]{
     background-color: #000000;
     right:0;
     color:white;
+
 }
 
 .etiquette-apres {
     background-color: #000000;
     left:0;
+    top:0;
 
 }
 
@@ -700,6 +700,7 @@ input[type="submit"]{
     min-width: 100%;
     box-sizing: border-box;
     padding: 20px;
+    padding-bottom: 5px;
     text-align: center;
 }
 
@@ -749,9 +750,11 @@ input[type="submit"]{
 }
 
 #introduction img {
-    display: block; /* Assure que l'image est bien affichée */
     width: 100%;
     margin: auto;
+}
+.desktop-image {
+    display: block;
 }
 
 .stars-container {
@@ -907,4 +910,153 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.carousel-container2 {
+    display: none;
+}
+
+.mobile-image {
+    display: none;
+}
+
+/*  VERSION TABLETTE  */
+
+@media screen and (min-width: 768px) and (max-width: 1300px){
+    .gallery{
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+    }
+
+    .work-card {
+        min-height:200px;
+    }
+    .carousel-container {
+        bottom:-50px;
+        border: 1px solid black;
+    }
+    .boutonModifier3 {
+        margin-top: 100px;
+    }
+    #contact h2,  #contact p,  #contact span,  #contact a{
+        font-size: 24px;
+    }
+    .footer-container {
+        flex-direction: column;
+        background-color: black;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    footer {
+        height: 100%;
+        padding-block: 50px;
+    }
+
+}
+/*  VERSION MOBILE  */
+
+@media screen and (min-width: 350px) and (max-width: 768px){
+    .gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap:40px;
+    }
+    .gallery img {
+        object-fit: fill;
+        height: 100%;
+    }
+    .mobile-image {
+        display: block;
+    }
+
+    .desktop-image {
+        display: none;
+    }
+    .carousel-container {
+        bottom:-112px;
+        border: 1px solid black;
+    }
+    .boutonModifier3 {
+        margin-top: 150px;
+    }
+    #portfolio h2 {
+        font-size: 24px;
+    }
+    .work-card {
+        width: 80%;
+        min-height: unset;
+    }
+    .etiquette-avant {
+        bottom: 0;
+
+    }
+    .etiquette-apres {
+        top: 0;
+        right: 0;
+        left:unset;
+    }
+    .etiquette-container {
+    }
+
+    .title-container {
+        text-align: start;
+        left:0;
+        border-radius: 0px 25px 0px 0px;
+        width: 50%;
+    }
+    .work-date, .work-title {
+        font-size: 14px;
+    }
+    .ul-nav li a{
+        font-size: 18px;
+    }
+    #contact h2,  #contact p,  #contact span,  #contact a{
+        font-size: 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        background-color: black;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        gap:20px;
+        text-align: center;
+    }
+
+    footer {
+        flex-direction: column;
+        height: 100%;
+        padding-block: 50px;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        gap:50px;
+    }
+}
+
+
+/*  VERSION PETIT MOBILE  */
+
+@media screen and (max-width: 525px){
+
+}
+
+/* VERSION TABLETTE ET MOBILE */
+
+@media screen and  (max-width: 1300px) {
+
+
+
+    .carousel-slide {
+        padding-bottom: 5px;
+    }
+    .carousel-slide p {
+        font-size: 14px;
+    }
+
+
+
 }

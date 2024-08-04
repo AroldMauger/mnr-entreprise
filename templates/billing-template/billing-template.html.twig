@@ -17,14 +17,15 @@
 
         .header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
             position: relative;
+            margin-top: 20px;
         }
 
         .billing-logo {
-            width: 30%;
+            width: 24%;
             max-height: 120px;
             object-fit: contain;
         }
@@ -88,7 +89,7 @@
             border-collapse: collapse;
             font-size: 16px;
             margin-left: auto;
-            margin-top: 20px;
+            margin-top: 50px;
         }
 
         .total-table td {
@@ -115,6 +116,11 @@
             font-size: 26px;
         }
 
+        h1 {
+            margin-top:30px;
+            margin-bottom:30px;
+        }
+
     </style>
 </head>
 <body class="page">
@@ -131,19 +137,12 @@
     <div class="client-details">
         <p class="text-billing"><strong>{{ billing.name }}</strong></p>
         <p class="text-billing"><strong>{{ billing.address }}</strong></p>
+        <p class="text-billing"><strong>{{ billing.codePostal }}, {{ billing.city }}</strong></p>
     </div>
-    <p>{{ billing.status }} N° {{ billing.id }}</p>
 </div>
 
-<p class="text-billing">
-    {% if billing.status == 'DEVIS' %}
-        Établi le {{ billing.creationDate|date('d/m/Y') }}
-    {% elseif billing.status == 'FACTURE' %}
-        Établie le {{ billing.creationDate|date('d/m/Y') }}
-    {% else %}
-        Établi(e) le {{ billing.creationDate|date('d/m/Y') }}
-    {% endif %}
-</p>
+<p class="text-billing">{{ billing.status }} N° {{ billing.id }}</p>
+<p class="text-billing">Date d'émission : {{ "now"|date('d/m/Y') }}</p>
 
 <h1 class="main-title-in-pdf">{{ billing.title }}</h1>
 
@@ -175,6 +174,11 @@
 {% set tva = totalHT * tvaPercentage %}
 {% set totalTTC = totalHT + tva %}
 {% set netAPayer = totalTTC %}
+
+{% set totalHT = totalHT|number_format(2, '.', '') %}
+{% set tva = tva|number_format(2, '.', '') %}
+{% set totalTTC = totalTTC|number_format(2, '.', '') %}
+{% set netAPayer = netAPayer|number_format(2, '.', '') %}
 
 <table class="total-table">
     <tbody>

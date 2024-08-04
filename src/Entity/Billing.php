@@ -40,6 +40,12 @@ class Billing
     #[ORM\OneToMany(mappedBy: 'billing', targetEntity: BillingItem::class, cascade: ['persist', 'remove'], orphanRemoval: true)]
     private Collection $billingItems;
 
+    #[ORM\Column(length: 255)]
+    private ?string $code_postal = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $city = null;
+
     public function __construct()
     {
         $this->billingItems = new ArrayCollection();
@@ -148,6 +154,30 @@ class Billing
                 $billingItem->setBilling(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCodePostal(): ?string
+    {
+        return $this->code_postal;
+    }
+
+    public function setCodePostal(string $code_postal): static
+    {
+        $this->code_postal = $code_postal;
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setCity(string $city): static
+    {
+        $this->city = $city;
 
         return $this;
     }

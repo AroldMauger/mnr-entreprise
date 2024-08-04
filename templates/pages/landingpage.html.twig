@@ -9,9 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <meta name="description" content="">
     <link rel="stylesheet" href="app.css">
     <script src="https://kit.fontawesome.com/70fabb1b7e.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 <header>
@@ -54,7 +54,7 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                     </span>
-                    <p>"Nous sommes à 100% satisfaits de chacun des travaux de menuiserie qui ont été réalisés dans notre maison : installation d'un plan de travail, pose de fenêtre, traitement et rénovation de plancher. Je ne peux que le recommander !"</p>
+                    <p>"Nous sommes à 100% satisfaits de chacun des travaux de menuiserie qui ont été réalisés dans notre maison : installation d'un plan de travail, pose de fenêtre, traitement et rénovation de plancher. Je ne peux que le recommander!"</p>
                     <cite>- Arold MAUGER</cite>
                 </div>
                 <div class="carousel-slide">
@@ -74,7 +74,9 @@
         </div>
 
         <!-- Image en dessous du carrousel -->
-        <img src="car3.png" alt="Image car3" />
+        <img src="car3.png" alt="Image car3"  class="desktop-image"/>
+        <img src="introduction.png" class="mobile-image" alt="Image car3" />
+
     </section>
 
 
@@ -91,7 +93,7 @@
             </ul>
         </nav>
 
-        <div class="gallery works-list" id="works-list">
+        <div class="gallery" id="works-list">
             {% for work in works %}
                 <div class="work-card">
                     <img class="work-image" src="./uploads/images/{{ work.image }}"></img>

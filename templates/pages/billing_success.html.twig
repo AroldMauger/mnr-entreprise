@@ -3,29 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Maiseret menuiserie</title>
-    <meta name="description" content="Maiseret menuiserie, bois, pvc, réparations et travaux Calvados">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <meta name="description" content="">
-    <link rel="stylesheet" href="{{ asset('app.css') }}">
     <script src="https://kit.fontawesome.com/70fabb1b7e.js" crossorigin="anonymous"></script>
+    <meta name="description" content="Maiseret menuiserie, bois, pvc, réparations et travaux Calvados">
+    <link rel="stylesheet" href="{{ asset('billing.css') }}">
+    <script src="https://kit.fontawesome.com/70fabb1b7e.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 <header class="header-form">
     <img class="logo-form" src="{{ asset('logo.png') }}" alt="logo de l'entreprise MNR">
-    <a href="/admin" class="return-button-form">Tableau de bord</a>
+    <a href="/admin" class="return-button-form">Retour admin</a>
 </header>
 
 <main class="main-form">
-    <h2 class="form_title">Confirmation</h2>
+    <p class="form_title">Confirmation</p>
     <p class="form_title">Votre facture a bien été créée !</p>
     <div class="submit-form-button_container">
         <a href="{{ path('billing_download', { 'id': billing.id }) }}" class="billing-dwl">Télécharger</a>
     </div>
-    <div class="submit-form-button_container">
-        <a href="/admin" class="return-billing">Retour au tableau de bord</a>
-    </div>
+
 </main>
 </body>
 </html>

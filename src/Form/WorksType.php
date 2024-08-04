@@ -22,13 +22,13 @@ class WorksType extends AbstractType
             ])
             ->add('category', ChoiceType::class, [
                 'choices'  => [
-                    'Fenêtre' => 'fenetre',
-                    'Porte' => 'porte',
-                    'Peinture' => 'peinture',
-                    'Rénovations' => 'renovations',
-                    'Salon' => 'salon',
-                    'Cuisine' => 'cuisine',
-                    'Jardin' => 'jardin',
+                    'Fenêtre' => 'Fenêtre',
+                    'Porte' => 'Porte',
+                    'Peinture' => 'Peinture',
+                    'Rénovations' => 'Rénovations',
+                    'Salon' => 'Salon',
+                    'Cuisine' => 'Cuisine',
+                    'Jardin' => 'Jardin',
                 ],
                 'placeholder' => 'Choisissez une catégorie',
                 'label' => 'Catégorie',

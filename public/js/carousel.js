@@ -35,3 +35,5 @@ function moveSlide(step) {
 
 // Initial display
 showSlide(slideIndex);
+
+
